@@ -1,5 +1,5 @@
 {
-  "name": "somelchenko/GAuthenticator",
+  "name": "somelchenko/gauthenticator",
   "description": "Magento 2 two factor authentication using google authenticator",
   "require": {
     "php": "~7.0.0|~7.1.0",
