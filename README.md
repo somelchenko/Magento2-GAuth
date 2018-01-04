@@ -1,11 +1,11 @@
-# Magento2-GAuth
+# Magento 2 Google Authenticator Login
 Magento 2 Two-factor authentication uses Google Authenticator OTP.
 
 
 Google Authenticator works with 2-Step Verification for your Google Account to provide an additional layer of security when signing in. 
 
 Enable  Two-factor authentication for admin customer
-![c64c3e9c09](https://user-images.githubusercontent.com/3199042/34572618-4376ba48-f18b-11e7-9f64-afe2f014fc62.png)
+![610fead922](https://user-images.githubusercontent.com/3199042/34573601-18e36418-f18e-11e7-92be-f727be42a504.png)
 
 Enter your OTP code on login page
 ![0fe335dd2c](https://user-images.githubusercontent.com/3199042/34572305-80692450-f18a-11e7-97d7-c1c531d2ba5e.png)
