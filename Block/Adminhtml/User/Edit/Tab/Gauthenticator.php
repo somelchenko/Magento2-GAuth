@@ -135,6 +135,7 @@ class Gauthenticator extends Generic implements TabInterface
 
             $qrHtml = '<span style="color:red; font-size: 20px">' . __('Scan QR code before enable authorization and closing the page!!') . '</span> <br><img src="' . $url . '" />';
 
+            $qrHtml .= '<br>'. __('or enter your secret %1', $secret);
             $model->setGoogleSecret($secret);
             $baseFieldset->addField('google_secret', 'hidden', ['name' => 'google_secret']);
         }
