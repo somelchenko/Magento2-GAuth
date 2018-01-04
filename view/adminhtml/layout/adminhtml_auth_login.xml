@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="form.additional.info">
+            <block class="Magento\Backend\Block\Template" name="adminhtml_login_google_authenticator"
+                   template="SO_Gauthenticator::login/google_authenticator.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
