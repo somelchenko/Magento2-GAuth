@@ -4,7 +4,7 @@
   "require": {
     "php": "~7.0.0|~7.1.0|~7.2.0",
     "magento/magento-composer-installer": "*",
-    "phpgangsta/googleauthenticator": "dev-master"
+    "christian-riesen/otp": "^2.0"
   },
   "type": "magento2-module",
   "license": [

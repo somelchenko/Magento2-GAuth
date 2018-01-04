@@ -5,7 +5,8 @@ namespace SO\Gauthenticator\Observer;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Exception\Plugin\AuthenticationException as PluginAuthenticationException;
-use PHPGangsta_GoogleAuthenticator as GoogleAuth;
+use Otp\Otp;
+use ParagonIE\ConstantTime\Encoding;
 
 /**
  * Class SecretCodeCheck
@@ -13,12 +14,6 @@ use PHPGangsta_GoogleAuthenticator as GoogleAuth;
  */
 class SecretCodeCheck implements ObserverInterface
 {
-
-    /**
-     * @var \PHPGangsta_GoogleAuthenticator
-     */
-    protected $_ga;
-
     /**
      * @var \Magento\Framework\App\RequestInterface
      */
@@ -26,15 +21,12 @@ class SecretCodeCheck implements ObserverInterface
 
     /**
      * SecretCodeCheck constructor.
-     * @param \PHPGangsta_GoogleAuthenticator $ga
      * @param \Magento\Framework\App\RequestInterface $request
      */
     public function __construct(
-        GoogleAuth $ga,
         RequestInterface $request
     )
     {
-        $this->_ga = $ga;
         $this->_request = $request;
     }
 
@@ -56,8 +48,11 @@ class SecretCodeCheck implements ObserverInterface
         $adminUser = $user->loadByUsername($userName);
 
         if ($adminUser->getEnableGauth() && $adminUser->getId()) {
-            $code = $this->_request->getParam('otp');
-            $checkResult = $this->_ga->verifyCode($user->getGoogleSecret(), $code, 2);
+            $key = $this->_request->getParam('otp');
+            $otp = new Otp();
+            $secret = $user->getGoogleSecret();
+
+            $checkResult = $otp->checkTotp(Encoding::base32Decode($secret), $key);
             if (!$checkResult) {
                 throw new PluginAuthenticationException(__('Google Authenticator OTP is Incorrect.'));
             }
