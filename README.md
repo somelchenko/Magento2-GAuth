@@ -1,5 +1,5 @@
 # Magento2-GAuth
-Magento 2 Two-factor authentication use Google Authenticator OTP.
+Magento 2 Two-factor authentication uses Google Authenticator OTP.
 
 
 Google Authenticator works with 2-Step Verification for your Google Account to provide an additional layer of security when signing in. 
@@ -21,11 +21,12 @@ Install module. Run in masgetno root follder
 ## Console
 
 Disable two-factor authentication for customer
-`bin/magento admin:user:disable-google-otp `
+
+`bin/magento admin:user:disable-google-otp`
 
 ## Google Authenticator Apps
 
-https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2
-https://itunes.apple.com/us/app/google-authenticator/id388497605
+[Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
+[iPhone](https://itunes.apple.com/us/app/google-authenticator/id388497605)
 
-There are also older open source versions of the Google Authenticator app for both iPhone and Android.
+There are also older open source versions of the Google Authenticator app for both [iPhone](https://github.com/google/google-authenticator) and [Android](https://github.com/google/google-authenticator-android).
