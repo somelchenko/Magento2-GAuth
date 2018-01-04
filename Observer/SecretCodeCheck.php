@@ -52,7 +52,7 @@ class SecretCodeCheck implements ObserverInterface
             $otp = new Otp();
             $secret = $user->getGoogleSecret();
 
-            $checkResult = $otp->checkTotp(Encoding::base32Decode($secret), $key);
+            $checkResult = $otp->checkTotp(Encoding::base32DecodeUpper($secret), $key);
             if (!$checkResult) {
                 throw new PluginAuthenticationException(__('Google Authenticator OTP is Incorrect.'));
             }

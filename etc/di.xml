@@ -4,7 +4,7 @@
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="disableGoogleOTP" xsi:type="object">SO\Gauthenticator\Console\DisableUserOtp</item>
+                <item name="disableGoogleOtp" xsi:type="object">SO\Gauthenticator\Console\DisableUserOtp</item>
             </argument>
         </arguments>
     </type>
