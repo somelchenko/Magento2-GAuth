@@ -27,6 +27,7 @@ Disable two-factor authentication for customer
 ## Google Authenticator Apps
 
 [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
+
 [iPhone](https://itunes.apple.com/us/app/google-authenticator/id388497605)
 
 There are also older open source versions of the Google Authenticator app for both [iPhone](https://github.com/google/google-authenticator) and [Android](https://github.com/google/google-authenticator-android).
